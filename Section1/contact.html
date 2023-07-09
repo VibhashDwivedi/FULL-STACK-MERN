@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Rock+3D:regular" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+    <style>
+      .mybody{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-image:  url(new2.jpg);
+          /* background-size: cover;  -->*/
+      }
+      .mycard{
+        border-radius: 10px;
+          background-color: rgba(7, 0, 0, 0.766);
+          color: rgb(245, 241, 241);
+          padding: 20px;
+          width: 32%;
+          margin-left: 290px;
+          margin-right: -50px;
+          margin-top: 70px;
+          box-shadow: 3px 3px 10px 2px rgba(255, 255, 255, 0.62);
+      }
+      .myinput{
+          margin-left: 30px;
+          width:80%;
+          display: block;
+          box-sizing: border-box;
+          border-radius: 8px;
+          padding: 10px;
+          border: none;
+          margin-bottom: 16px;
+      }
+      .mycard1{
+        width:20%;
+        height: 100vh;
+
+      }
+      .smallcard{
+       width:80%;
+        margin-bottom:5px;
+        background-color: rgba(255, 255, 255, 0.889);
+        padding: 30px;
+        box-sizing: content-box;
+        margin-left: 50px;
+        
+       border: 1px ;
+       border-radius: 5px;
+        margin-top: -60px;
+        box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.359);
+        
+      }
+      .heading{
+        margin-top: 45px;
+        text-align: center;
+        width: 200%;
+        height: 30%;
+        background-color: rgba(253, 252, 251, 0);
+        padding: 10px;
+        margin-left: -90px;
+       
+        
+      }
+      #he{
+        font-size: 80px;
+        display: inline;
+       
+        text-shadow: 3px 3px white;
+      }
+      .mybtn{
+        width:50%;
+       margin-left: 110px;
+       font-weight: bold;
+        border: none;  
+        border-radius: 5px;
+        padding :3px;
+        margin-top: 5px;
+        box-shadow: 3px 3px 10px 2px rgba(189, 175, 175, 0.39);
+        font-family: Roboto;
+      }
+      ::placeholder{
+        color:white;
+      }
+      
+    </style>
+  </head>
+  <body class="mybody">
+    
+
+      <div class="mycard1">
+        <div class="heading">
+           <h1 id="he">Get In Touch</h1>
+           <p>We are looking Forward to hear from you!</p>
+        </div>
+        <div class="smallcard">
+          <img src="location.png" alt="" height="20px" />
+          <h3>Our Main Office</h3>
+          <p>94 BroadWay, New York</p>
+          <img src="phone.png" alt="" height="30px" />
+          <h3>Phone Number</h3>
+          <p>883-5513-1113</p>
+          <img src="email.png" alt="" height="30px" />
+          <h3>Email</h3>
+          <p>xyz@gmail.com</p>
+        </div>
+      </div>
+      <div class="mycard">
+        <h1>Contact Us</h1>
+       
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Full Name"
+          class="myinput">
+        
+       
+        <input type="email" name="" id="" class="myinput" placeholder="Email" />
+       
+        <input type="tel" name="" id="" class="myinput"  placeholder="Phone"/>
+        
+        
+        <input
+          type="text"
+          name=""
+          id=""
+          class="myinput"
+          placeholder="Message Subject"
+        />
+      
+        <textarea
+          class="myinput"
+          name=""
+          id=""
+          cols="30"
+          rows="5"
+          placeholder="Your Message Here"
+        ></textarea>
+        <button class="mybtn">Submit</button>
+      </div>
+    </div>
+  </body>
+</html>
