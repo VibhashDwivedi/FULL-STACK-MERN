@@ -13,6 +13,7 @@ console.log('The celsius eqivalent of '+ f + ' is ' + ((f-32)*(5/9)));
 
 let c= 37;
 console.log('The fahrenheit eqivalent of '+ c + ' is ' + (c*(9/5)+32));
+console.log(`The Fahrenheit eqivalent of ${c} degree celsius is ${(c*(9/5)+32)} degree fahrenheit`)
 console.log('------------------------');
 
 //WAP to check if number is palindrome
@@ -54,6 +55,15 @@ for(let i=2;i<l;i++)
     console.log(temp);
     F=S;
     S=temp;
+}
+
+let [a,b]=[0,1];
+console.log(`${a}\n${b}`);
+while(a+b<100)
+{
+    let sum=a+b;
+    console.log(sum);
+    [a,b]=[b,sum];
 }
 console.log('-------------------------');
 
