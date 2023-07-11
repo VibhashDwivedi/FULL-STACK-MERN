@@ -15,15 +15,6 @@ let c= 37;
 console.log('The fahrenheit eqivalent of '+ c + ' is ' + (c*(9/5)+32));
 console.log('------------------------');
 
-
-
-
-
-
-
-
-
-
 //WAP to check if number is palindrome
 let num1= 376673;
 let num2=num1;
