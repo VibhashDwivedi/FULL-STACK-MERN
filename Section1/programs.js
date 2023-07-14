@@ -66,5 +66,46 @@ while(a+b<100)
     [a,b]=[b,sum];
 }
 console.log('-------------------------');
+//Questions : 
 
+//1. Create an array of number and filter numbers which are not perfect squares.
+//2. Create an array of names and filter names with length greater than 5.
+//3. Create an array of full names and use map to keep only first name.(use split function)
+//4. Create a function to print all prime numbers in given range parameters.
+//question 1
 
+const arr=[1,2,,3,5,8,13,16,25,36,47,64];
+const temp_arr= arr.filter((p)=>{return p**0.5 != parseInt(p**0.5)});
+console.log(temp_arr);
+
+//Question2
+
+const names =['Vibhash', 'Deepak','Manas','Saksham','Pranjal','Ajay'];
+const names2= names.filter((n)=> {return n.length>5});
+console.log(names2);
+
+//Question3
+const fullName= ['Vibhash Dwivedi','Deepak Yadav','Manas Mishra','Saksham Mishra','Pranjal Tiwari','Ajay Yadav'];
+const firstName = fullName.map((f)=>{return f.split(" ")[0]});
+console.log(firstName);
+
+//Question 4
+const isPrime = (a,b) =>
+{
+    for( let i= a;i<=b;i++)
+   
+    {
+        let flag=0;
+        for(let j=2; j*j<=i;j++)
+        {
+            if (i%j==0){
+                flag=1;
+            break;
+            }
+        }
+        if(flag==0)
+        console.log(i);
+
+    }
+}
+isPrime(2,25);
