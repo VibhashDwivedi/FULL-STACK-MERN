@@ -6,8 +6,9 @@ const Home = () => {
     <div>
       <h1>Homepage</h1>
       <p style={{fontSize: '50px', backgroundColor: 'lightblue'}}>Hello</p>
-      <input type="text" />
       <p className='myClass'>how are you?</p>
+      <input type="text" />
+      
       
     </div>
   )
