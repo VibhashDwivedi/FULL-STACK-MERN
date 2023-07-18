@@ -41,6 +41,11 @@ const Navbar = () => {
             EventHandling
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/state">
+            StateManagement
+          </NavLink>
+        </li>
         <li className="nav-item dropdown">
           <Link
             className="nav-link dropdown-toggle"
