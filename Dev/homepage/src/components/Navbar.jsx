@@ -24,7 +24,7 @@ const Navbar = () => {
         <input
           className="form-control "
           type="search"
-          placeholder="Search"
+          placeholder="Search..."
           aria-label="Search"
           style={{width: '400px'}
           
@@ -36,7 +36,7 @@ const Navbar = () => {
       
         <li className="nav-item">
           <NavLink className="nav-link" to="login">
-            Log in
+            <button className='btn buttons2' style={{marginTop:'-20px' , marginBottom:'-15px'}}>Log in</button>
           </NavLink>
         </li>
         <li className="nav-item">
