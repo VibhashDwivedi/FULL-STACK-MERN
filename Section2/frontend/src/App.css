@@ -8,3 +8,119 @@
   color: red !important;
   border-bottom: 2px solid red;
 }
+.down{
+  position: fixed;
+  bottom: 0;
+width: 90%;
+height:70%;
+position: fixed;
+
+
+}
+.fun{
+  overflow-y: scroll;
+  overflow-wrap: normal;
+}
+
+.para{
+  max-width: 400px;
+  background-color: rgb(224, 227, 199);
+  border-radius: 15px;
+  padding: 7px;
+}
+
+.mybody{
+ 
+  background-image:  url(images/new2.jpg);
+  /* background-size: cover;  -->*/
+}
+.mycard{
+border-radius: 10px;
+  background-color: rgba(7, 0, 0, 0.766);
+  color: rgb(245, 241, 241);
+  padding: 20px;
+  width: 32%;
+  margin-left: 290px;
+  /* margin-right: -50px; */
+  /* margin-top: 0px; */
+  box-shadow: 3px 3px 10px 2px rgba(255, 255, 255, 0.62);
+  height: 95vh;
+}
+.myinput{
+  margin-left: 30px;
+  width:80%;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  margin-bottom: 15px;
+}
+.mycard1{
+width:27%;
+height: 75vh;
+margin-left: 75px;
+
+}
+.smallcard{
+width:80%;
+margin-bottom:5px;
+background-color: rgba(255, 255, 255, 0.889);
+padding: 20px;
+box-sizing: content-box;
+margin-left: 75px;
+
+border: 1px ;
+border-radius: 5px;
+margin-top: 4px;
+box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.359);
+
+}
+.heading{
+margin-top: 0px;
+text-align: center;
+width: 200%;
+height: 30%;
+background-color: rgba(253, 252, 251, 0);
+padding: 10px;
+margin-left: -90px;
+
+
+}
+#he{
+font-size: 80px;
+display: inline;
+
+text-shadow: 3px 3px white;
+}
+.mybtn{
+width:50%;
+margin-left: 80px;
+font-weight: bold;
+border: none;  
+border-radius: 5px;
+padding :3px;
+margin-top: 5px;
+box-shadow: 3px 3px 10px 2px rgba(189, 175, 175, 0.39);
+font-family: Roboto;
+}
+::placeholder{
+color:white;
+}
+
+.error-label{
+  color: red;
+  display: inline;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 10px;
+}
+.error-label2{
+  color: red;
+  display: inline;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 30px;
+  margin-bottom: -45px;
+}
+

@@ -51,6 +51,21 @@ const Navbar = () => {
              Todo App
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/chat">
+             Chat App
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/contact">
+             Contact
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/browse">
+             Browse
+          </NavLink>
+        </li>
         
         <li className="nav-item">
           <Link className="nav-link disabled">Disabled</Link>
