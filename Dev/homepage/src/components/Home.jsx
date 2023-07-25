@@ -1,8 +1,12 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
+
 
 const Home = () => {
   return (
+
+
+
     <div  style={{backgroundColor:'lightcyan', marginTop:'50px'}}>
     <div className='container ' >
         <div className="row">
@@ -11,12 +15,12 @@ const Home = () => {
                     <div className="card-body ">
                         <h6 className='fw-bold'>DEV Community is a community of 1,106,019 amazing developers</h6>
                         <p>We're a place where coders share, stay up-to-date and grow their careers.</p>
-                        <Link className="nav-link " to="signup">
+                        <Link className="nav-link " to="/signup">
           <button className="btn btn-outline-primary fw-bold" style={{width:'100%'}}>
           Create Account
         </button>
           </Link>
-          <NavLink className="nav-link" to="login" >
+          <NavLink className="nav-link" to="/login" >
             <button className='btn buttons2 mt-1' style={{width:'100%'}}>Log in</button>
           </NavLink>
 
@@ -46,8 +50,8 @@ const Home = () => {
             </div>
             <div className="col-md-6 my-3">
               <div className="d-flex">
-                <button className='btn  buttons fw-bold'>Relevant</button>
-                <button className='btn  buttons'>Latest</button>
+              <button className='btn  buttons fw-bold'>Relevant</button>
+               <button className='btn  buttons'>Latest</button>
                 <button className='btn  buttons'>Top</button>
               </div>
              <div className="card mt-2">
@@ -90,7 +94,7 @@ const Home = () => {
                     <img className="image4" src="https://res.cloudinary.com/practicaldev/image/fetch/s--DShyBF6_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_775/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7uc7wxj38mtlwqui4dvj.png" alt="" /></div>
                  <h5 className='m-3 fw-bold'>Need to stay up-to-date with the most relevant trends in software, such as generate AI, cloud computing, and all things frontend?</h5>
                  <p className='mx-3'>look no further</p>
-                  <a href=""><h4 style={{color:'blue', textDecoration:'underline'}}className='m-3 fw-bolder'>Start Now</h4></a>
+                  <a href="#/"><h4 style={{color:'blue', textDecoration:'underline'}}className='m-3 fw-bolder'>Start Now</h4></a>
                   <p className='mx-3'>Happy Coding<i class="fa-solid fa-heart" style={{color: '#e90707'}}></i></p>
                   </div>
                 </div>
@@ -101,15 +105,15 @@ const Home = () => {
                   <img className='image'src="https://res.cloudinary.com/practicaldev/image/fetch/s--sHHbPqt4--/c_limit,f_auto,fl_progressive,q_auto,w_500/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ylq17e4fm8gfs75ur7nf.jpg" alt="" />
               
                  <div className="card-body">
-                 <a href="#"> <h6 className='mt-2 fw-bold'>refine DEV Hackathon (24)</h6></a>
+                 <a href="#/"> <h6 className='mt-2 fw-bold'>refine DEV Hackathon (24)</h6></a>
                  <hr className='line'/>
-                 <a href="#">Whatsapp Web Scraper- Find and Export Contacts!</a>
+                 <a href="#/">Whatsapp Web Scraper- Find and Export Contacts!</a>
                  <hr className="line" />
-                 <a href="#">React-Analytics</a>
+                 <a href="#/">React-Analytics</a>
                  <hr className="line" />
-                 <a href="#">Compette: An online Competition platform to unleash hidden talents 🏆</a>
+                 <a href="#/">Compette: An online Competition platform to unleash hidden talents 🏆</a>
                  <hr className="line" />
-                 <a href="#">Create animations with keronote ui</a>
+                 <a href="#/">Create animations with keronote ui</a>
                  <button className="btn btn-primary mt-1 fw-bold" style={{width:'100%'}}>
           Share your Project
         </button>
@@ -121,19 +125,20 @@ const Home = () => {
                 <div className="card mt-3">
                   <div className="card-body">
                     <h6 className='fw-bold'>#discuss</h6>
-                    <a href="#">From Pencil to pixels: The Mesmerizing Evolution of Programming</a>
+                    <a href="#/">From Pencil to pixels: The Mesmerizing Evolution of Programming</a>
                     <button className="d-block py-0 px-1 btn btn-warning">New</button>   
                     <hr className="line" />               
-                    <a href="#">Hello, World!</a>
+                    <a href="#/">Hello, World!</a>
                     <button className="d-block py-0 px-1 btn btn-warning">New</button>   
                     <hr className="line" />  
-                    <a href="">Quo Vadis, Web Development</a>
+                    <a href="/">Quo Vadis, Web Development</a>
                     <p style={{fontSize:'small'}}>2 comments</p>             
                   </div>
                 </div>
             </div>
         </div>
     </div>
+    
     </div>
   )
 }
