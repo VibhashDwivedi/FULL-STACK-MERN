@@ -10,6 +10,9 @@ const port = 5000;
 const userRouter = require('./routers/userRouter');
 const productRouter = require('./routers/productRouter');
 
+//middleware to convert json data to javascript object
+app.use(express.json());
+
 //middlewares
 app.use('/user', userRouter);
 app.use('/product', productRouter);
