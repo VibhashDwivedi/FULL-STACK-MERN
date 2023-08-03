@@ -56,7 +56,18 @@ const SignUp = () => {
       }
 
       //validationSchema : SignupSchema;
-    } 
+const uploadFile=  async(e)=>{
+  let file = e.target.files[0];
+  const fd = new FormData();
+  fd.append('myfile', file);
+  const res =await fetch ('http://localhost:5000/util/uploadfile',{
+    method:'POST',
+    body :fd
+  });
+
+  console.log(res.status);
+}
+} 
     
   });
   return (
@@ -104,7 +115,8 @@ const SignUp = () => {
               name="password" onChange={signupForm.handleChange} value={signupForm.values.password} 
             />
            
-          
+           <label htmlFor="">Upload Files</label>
+          <input type="file" />
           
            
           
