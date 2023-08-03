@@ -34,7 +34,9 @@ const SignUp = () => {
        body:JSON.stringify(values),
        headers:{
         'Content-Type': 'application/json'
-       }   
+       } ,
+
+      
     });
       
      console.log(res.status);
@@ -55,21 +57,24 @@ const SignUp = () => {
 
       }
 
-      //validationSchema : SignupSchema;
-const uploadFile=  async(e)=>{
-  let file = e.target.files[0];
-  const fd = new FormData();
-  fd.append('myfile', file);
-  const res =await fetch ('http://localhost:5000/util/uploadfile',{
-    method:'POST',
-    body :fd
+     
+
+} ,
+validationSchema : SignupSchema
   });
 
-  console.log(res.status);
-}
-} 
-    
-  });
+  const uploadFile=  async(e)=>{
+    let file = e.target.files[0];
+    const fd = new FormData();
+    fd.append('myfile', file);
+    const res =await fetch ('http://localhost:5000/util/uploadfile',{
+      method:'POST',
+      body :fd
+    });
+  
+    console.log(res.status);
+  }
+
   return (
     <div className="d-flex align-items-center justify-content-center  ">
  
