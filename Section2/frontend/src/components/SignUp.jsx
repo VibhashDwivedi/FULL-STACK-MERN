@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormik} from 'formik'
 import Swal from 'sweetalert2'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 import * as Yup from 'yup';
 
@@ -86,7 +86,7 @@ validationSchema : SignupSchema
           <label className="form-label" htmlFor="form3Example1cg">
               Your Name
             </label>
-            <p>{signupForm.errors.name}</p>
+            <p>{signupForm.touched.name? signupForm.errors.name :''}</p>
             <input
               type="text"
               id="form3Example1cg"
@@ -99,7 +99,7 @@ validationSchema : SignupSchema
           <label className="form-label" htmlFor="form3Example3cg">
               Your Email
             </label>
-            <p>{signupForm.errors.email}</p>
+            <p>{signupForm.touched.email? signupForm.errors.email :''}</p>
             <input
               type="email"
               id="form3Example3cg"
@@ -112,7 +112,7 @@ validationSchema : SignupSchema
           <label className="form-label" htmlFor="form3Example4cg">
               Password
             </label>
-            <p>{signupForm.errors.password}</p>
+            <p>{signupForm.touched.password? signupForm.errors.password:''}</p>
             <input
               type="password"
               id="form3Example4cg"
@@ -150,9 +150,9 @@ validationSchema : SignupSchema
           </div>
           <p className="text-center text-muted mt-2 mb-0 text-white">
             Have an account?{" "}
-            <a href="#!" className="fw-bold text-body text-white">
+            <Link to="/login" className="fw-bold text-body text-white">
               <u>Login here</u>
-            </a>
+            </Link>
           </p>
         </form>
       </div>

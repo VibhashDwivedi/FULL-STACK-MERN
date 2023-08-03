@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 const Login = () => {
 
 
@@ -48,15 +49,24 @@ const Login = () => {
               <button type='submit' className='btn btn-primary w-100 rounded-5 mt-2'>SIGN IN</button>
             </form>
            
+           <p className='text-center mt-2'>No Account?
+            <Link to="/signup" className='fw-bold text-success text-decoration-none'>Create One</Link>
+           </p>
 
            <p className='text-center mt-3'>or sign in with</p>
             <div className='d-flex justify-content-center'>
             <button type="button" className="btn btn-link btn-floating mx-1">
-          <i className="fab fa-facebook-f"></i>
+          <i className="fab fa-facebook-f">
+            <Link to=""></Link>
+          </i>
         </button>
 
-        <button type="button" className="btn btn-link btn-floating mx-1">
-          <i className="fab fa-google"></i>
+        <button type="button" className="btn btn-link btn-floating mx-1"> <Link to="https://www.google.com/" target="_blank">
+        <i className="fab fa-google">
+           
+           </i>
+        </Link>
+         
         </button>
 
         <button type="button" className="btn btn-link btn-floating mx-1">

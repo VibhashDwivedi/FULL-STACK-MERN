@@ -1,8 +1,10 @@
 import { useFormik } from 'formik';
 import React from 'react'
+import Swal from 'sweetalert2';
+
 import * as Yup from 'yup';
 
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+//const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -11,7 +13,6 @@ const ContactSchema = Yup.object().shape({
     .required('Required'),
     phone: Yup.string()
     .required("Required")
-    .matches(phoneRegExp,'Invalid Number')
      .min(10, "too short")
      .max(10, "too long"),
   email: Yup.string().email('Invalid email').required('Required'),
@@ -30,7 +31,7 @@ const Contactform = () => {
           subject:'',
           msg:''
       },
-      conSubmit : async (values) => {
+       onSubmit : async (values) => {
         console.log(values);
         //sending request to backend
         const res = await fetch("http://localhost:5000/contact/add",
@@ -42,7 +43,20 @@ const Contactform = () => {
       });
         
        console.log(res.status);
-  
+       if(res.status ===200){
+       Swal.fire({
+        icon:'success',
+        title:'Thank You',
+        text:'We will reach out to you soon'
+       });
+      }
+  else{
+    Swal.fire({
+      icon:'error',
+      title: 'Oops',
+      text: 'Some error occured'
+  });
+  }
       
       
       },
@@ -77,7 +91,8 @@ const Contactform = () => {
   <div className="mycard mt-4">
     <h1>Contact Us</h1>
     <form onSubmit={contactform.handleSubmit}>
-    <p className='error-label2'>{contactform.errors.name}</p>
+    <label className="my-1 mx-4">Full Name</label>
+    <p className='error-label2'>{contactform.touched.name?contactform.errors.name:''}</p>
     <input
       type="text"
       id=""
@@ -88,12 +103,18 @@ const Contactform = () => {
       value={contactform.values.name}
     
     />
-    <p className='error-label2'>{contactform.errors.email}</p>
-    <input type="email"  id="" className="myinput" placeholder="Email"  name="email" onChange={contactform.handleChange} value={contactform.values.email}  />
-   <p className='error-label2'>{contactform.errors.phone}</p> <input type="number"  id="" className="myinput" placeholder="Phone"
+
+<label className="my-1 mx-4">Email</label>
+    <p className='error-label2'>{contactform.touched.email?contactform.errors.email:''}</p>
+    <input type=""  id="" className="myinput" placeholder="Email"  name="email" onChange={contactform.handleChange} value={contactform.values.email}  />
+    <label className="my-1 mx-4">Phone</label>
+   <p className='error-label2'>{contactform.touched.phone?contactform.errors.phone:''}</p> 
+   <input type="number"  id="" className="myinput" placeholder="Phone"
      name="phone"
      onChange={contactform.handleChange}
      value={contactform.values.phone}/>
+
+<label className="my-1 mx-4">Subject</label>
 <input
           type="text"
           name="subject"
@@ -103,7 +124,7 @@ const Contactform = () => {
           onChange={contactform.handleChange}
           value={contactform.values.subject}
         />
-      
+      <label className="my-1 mx-4">Message</label>
         <textarea
           className="myinput"
           name="msg"

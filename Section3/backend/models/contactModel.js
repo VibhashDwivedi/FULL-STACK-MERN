@@ -5,6 +5,6 @@ const myschema = new Schema({
    email: String,
    phone: Number,
    subject:String,
-   message:String
+   msg:String
 });
 module.exports = model('contact', myschema);
