@@ -1,8 +1,13 @@
 import React from 'react'
-import { useFormik } from 'formik';
+import { useFormik} from 'formik'
+import Swal from 'sweetalert2'
+import {useNavigate} from 'react-router-dom'
+
 import * as Yup from 'yup';
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
 
   const SignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -33,14 +38,26 @@ const SignUp = () => {
     });
       
      console.log(res.status);
+     if(res.status === 200){
+      Swal.fire({
+        icon:'success',
+        title: 'Signup Success',
+        text: 'Now Login To Continue'
+      });
+      navigate('/login');
+    }else{
+      Swal.fire({
+        icon:'error',
+        title: 'Oops',
+        text: 'Some error occured'
+    });
 
 
+      }
 
-      },
-
-       validationSchema : SignupSchema
-     
-
+      //validationSchema : SignupSchema;
+    } 
+    
   });
   return (
     <div className="d-flex align-items-center justify-content-center  ">
