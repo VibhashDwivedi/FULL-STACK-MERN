@@ -66,6 +66,11 @@ const Navbar = () => {
              Browse
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/addproduct">
+             Add Product
+          </NavLink>
+        </li>
         
         <li className="nav-item">
           <Link className="nav-link disabled">Disabled</Link>

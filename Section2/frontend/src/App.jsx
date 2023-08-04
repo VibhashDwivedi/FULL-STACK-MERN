@@ -11,6 +11,7 @@ import Chat from './components/Chat';
 import SignUp from './components/SignUp';
 import Contactform from './components/Contactform';
 import Browse from './components/Browse';
+import AddProduct from './components/AddProduct';
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path='chat' element= {<Chat/> } />
           <Route path='contact' element= {<Contactform/> } />
           <Route path='browse' element= {<Browse/> } />
+          <Route path='addproduct' element= {<AddProduct/> } />
         </Routes>
       </BrowserRouter>
     </div>

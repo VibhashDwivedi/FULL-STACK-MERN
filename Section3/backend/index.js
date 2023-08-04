@@ -11,6 +11,7 @@ const port = 5000;
 const userRouter = require('./routers/userRouter');
 const productRouter = require('./routers/productRouter');
 const contactRouter = require('./routers/contactRouter');
+const addProductRouter = require('./routers/addProductRouter');
 const utilRouter = require('./routers/util');
 const req = require('express/lib/request');
 
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use('/user', userRouter);
 app.use('/product', productRouter);
 app.use('/contact', contactRouter);
+app.use('/addproduct', addProductRouter);
 app.use('/util', utilRouter);
 
 //creating routes
