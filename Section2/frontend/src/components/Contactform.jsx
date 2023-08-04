@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 import * as Yup from 'yup';
 
-//const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -13,6 +13,7 @@ const ContactSchema = Yup.object().shape({
     .required('Required'),
     phone: Yup.string()
     .required("Required")
+    .matches(phoneRegExp, 'Phone number is not valid')
      .min(10, "too short")
      .max(10, "too long"),
   email: Yup.string().email('Invalid email').required('Required'),
