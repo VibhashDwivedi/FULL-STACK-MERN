@@ -2,6 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 const Login = () => {
 
 
@@ -15,8 +16,39 @@ const Login = () => {
       email: '',
       password: ''
   },
-  onSubmit : (values) => {
-    console.log(values); },
+  onSubmit : async (values) => {
+    console.log(values);
+    
+    //submit values to backend
+    const res = await fetch("http://localhost:5000/user/authenticate",
+    {method:'POST',
+     body:JSON.stringify(values),
+     headers:{
+      'Content-Type': 'application/json'
+     } ,
+
+    
+  });
+  
+  console.log(res.status);
+  if(res.status === 200){
+    Swal.fire({
+      icon: 'success',
+      title:'Login Successful'
+    })
+  }else if(res.status === 401){
+    Swal.fire('Invalid Credentials','Please check your credentials and try again.','warning')
+  }
+  else{
+    Swal.fire({
+      icon:'error',
+      title: 'Oops',
+      text: 'Some error occured'
+  });
+  }
+  
+  
+  },
     validationSchema: loginSchema
 });
   return (

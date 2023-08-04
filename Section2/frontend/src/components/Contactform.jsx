@@ -17,6 +17,8 @@ const ContactSchema = Yup.object().shape({
      .min(10, "too short")
      .max(10, "too long"),
   email: Yup.string().email('Invalid email').required('Required'),
+  subject:Yup.string().required('Required'),
+  msg:Yup.string().required('Required'),
 });
 
 const Contactform = () => {
@@ -116,6 +118,7 @@ const Contactform = () => {
      value={contactform.values.phone}/>
 
 <label className="my-1 mx-4">Subject</label>
+<p className='error-label2'>{contactform.touched.subject?contactform.errors.subject:''}</p>
 <input
           type="text"
           name="subject"
@@ -126,6 +129,7 @@ const Contactform = () => {
           value={contactform.values.subject}
         />
       <label className="my-1 mx-4">Message</label>
+      <p className='error-label2'>{contactform.touched.msg?contactform.errors.msg:''}</p>
         <textarea
           className="myinput"
           name="msg"

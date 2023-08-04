@@ -120,9 +120,12 @@ validationSchema : SignupSchema
               name="password" onChange={signupForm.handleChange} value={signupForm.values.password} 
             />
            
-           <label htmlFor="">Upload Files</label>
-          <input type="file" />
+           <label htmlFor="" className='form-label'>Upload File</label>
           
+           <input
+              type="file"
+              id=""
+              className="form-control "/>
            
           
           <div className="form-check d-flex mt-1 mb-3">
