@@ -28,4 +28,3 @@ app.get('/add',(req,res)=>{
 //start server
 app.listen(port,()=>{
     console.log(`server started on port ${port} successfully once again`);
-});

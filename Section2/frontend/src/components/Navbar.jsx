@@ -71,6 +71,11 @@ const Navbar = () => {
              Add Product
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/manageuser">
+             Manage User
+          </NavLink>
+        </li>
         
         <li className="nav-item">
           <Link className="nav-link disabled">Disabled</Link>

@@ -12,6 +12,10 @@ import SignUp from './components/SignUp';
 import Contactform from './components/Contactform';
 import Browse from './components/Browse';
 import AddProduct from './components/AddProduct';
+import ManageUser from './components/ManageUser';
+import { Toaster } from 'react-hot-toast';
+import UpdateUser from './components/UpdateUser';
+
 
 
 
@@ -20,7 +24,7 @@ function App() {
   return (
     <div> 
       
-
+<Toaster position='top-center'/>
       <BrowserRouter>
         <Navbar/>
         <Routes>
@@ -36,6 +40,8 @@ function App() {
           <Route path='contact' element= {<Contactform/> } />
           <Route path='browse' element= {<Browse/> } />
           <Route path='addproduct' element= {<AddProduct/> } />
+          <Route path='manageuser' element= {<ManageUser/> } />
+          <Route path='updateuser/:id' element= {<UpdateUser/> } />
         </Routes>
       </BrowserRouter>
     </div>

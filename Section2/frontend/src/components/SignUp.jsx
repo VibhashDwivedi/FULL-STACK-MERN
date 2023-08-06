@@ -86,7 +86,7 @@ validationSchema : SignupSchema
           <label className="form-label" htmlFor="form3Example1cg">
               Your Name
             </label>
-            <p>{signupForm.touched.name? signupForm.errors.name :''}</p>
+            <p className='error-label'>{signupForm.touched.name? signupForm.errors.name :''}</p>
             <input
               type="text"
               id="form3Example1cg"
@@ -99,7 +99,7 @@ validationSchema : SignupSchema
           <label className="form-label" htmlFor="form3Example3cg">
               Your Email
             </label>
-            <p>{signupForm.touched.email? signupForm.errors.email :''}</p>
+            <p className='error-label'>{signupForm.touched.email? signupForm.errors.email :''}</p>
             <input
               type="email"
               id="form3Example3cg"
@@ -112,7 +112,7 @@ validationSchema : SignupSchema
           <label className="form-label" htmlFor="form3Example4cg">
               Password
             </label>
-            <p>{signupForm.touched.password? signupForm.errors.password:''}</p>
+            <p className='error-label'>{signupForm.touched.password? signupForm.errors.password:''}</p>
             <input
               type="password"
               id="form3Example4cg"
