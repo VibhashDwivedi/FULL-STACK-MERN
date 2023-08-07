@@ -76,6 +76,11 @@ const Navbar = () => {
              Manage User
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="">
+             Log Out
+          </NavLink>
+        </li>
         
         <li className="nav-item">
           <Link className="nav-link disabled">Disabled</Link>

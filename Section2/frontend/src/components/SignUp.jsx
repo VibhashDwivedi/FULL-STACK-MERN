@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik} from 'formik'
 import Swal from 'sweetalert2'
 import {useNavigate, Link} from 'react-router-dom'
@@ -8,6 +8,8 @@ import * as Yup from 'yup';
 const SignUp = () => {
 
   const navigate = useNavigate();
+
+  const [selImage, setselImage] = useState('')
 
   const SignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -27,6 +29,7 @@ const SignUp = () => {
     },
 
     onSubmit: async (values) => {
+      values.avatar= selImage;
        console.log(values);
         //sending request to backend
       const res = await fetch("http://localhost:5000/user/add",
@@ -65,6 +68,7 @@ validationSchema : SignupSchema
 
   const uploadFile=  async(e)=>{
     let file = e.target.files[0];
+    setselImage(file.name);
     const fd = new FormData();
     fd.append('myfile', file);
     const res =await fetch ('http://localhost:5000/util/uploadfile',{
@@ -125,7 +129,8 @@ validationSchema : SignupSchema
            <input
               type="file"
               id=""
-              className="form-control "/>
+              className="form-control "
+              onChange={uploadFile}/>
            
           
           <div className="form-check d-flex mt-1 mb-3">
