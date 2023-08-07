@@ -34,7 +34,7 @@ const Login = () => {
   if(res.status === 200){
     Swal.fire({
       icon: 'success',
-      title:'Login Successful'
+      title:'Login Successful !!'
     })
 
     const data = await res.json();
