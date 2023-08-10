@@ -3,7 +3,10 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useUserContext from '../UserContext';
 const Login = () => {
+
+  const {setLoggedIn}= useUserContext();
 
 
   const loginSchema = Yup.object().shape({
@@ -39,7 +42,7 @@ const Login = () => {
 
     const data = await res.json();
     sessionStorage.setItem('user',JSON.stringify(data));
-
+     setLoggedIn(true);
 
   }else if(res.status === 401){
     Swal.fire('Invalid Credentials','Please check your credentials and try again.','warning')

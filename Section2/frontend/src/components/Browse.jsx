@@ -6,7 +6,7 @@ const Browse = () => {
     const [laptopList, setLaptopList] = useState( laptopData );
 
     const displayLaptopData = () => {
-        if(laptopList.length === 0) return <h1 className='text-center'>No Data Found</h1>
+        if(laptopList.length === 0) return <h1 className='text-center '>No Data Found</h1>
 
         return laptopList.map((laptop) => ( <div className='col-md-3 mb-4'>
             <div className='card'>

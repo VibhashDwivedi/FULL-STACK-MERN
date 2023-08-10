@@ -1,7 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import useUserContext from '../UserContext'
 
 const Navbar = () => {
+
+const {LoggedIn, logout} = useUserContext();
+
+const [currentUser, setcurrentUser] = useState(
+  JSON.parse(sessionStorage.getItem('user'))
+)
+
+const showLoginOption=()=>{
+  if(LoggedIn){
+    return(
+      <> <li className='nav-item'>
+  <button onClick={logout} className='btn btn-danger'>Logout</button>
+    </li>
+    <li>
+      <img width={40} height={40} className='ms-4 rounded-circle' src={"http://localhost:5000/"+currentUser.avatar} alt="" />
+    </li>
+    </>);
+
+  }
+  else{
+    return(<>
+     <li className="nav-item">
+          <NavLink className="nav-link" to="/login">
+            Login
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/signup">
+            SignUp
+          </NavLink>
+        </li>
+    </>
+  )
+}
+}
+
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -24,16 +62,6 @@ const Navbar = () => {
         <li className="nav-item">
           <NavLink className="nav-link"  to="/home">
             Home
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/login">
-            Login
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/signup">
-            SignUp
           </NavLink>
         </li>
         <li className="nav-item">
@@ -76,27 +104,8 @@ const Navbar = () => {
              Manage User
           </NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="">
-             Log Out
-          </NavLink>
-        </li>
-        
-        <li className="nav-item">
-          <Link className="nav-link disabled">Disabled</Link>
-        </li>
+      {showLoginOption()}
       </ul>
-      <form className="d-flex" role="search">
-        <input
-          className="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button className="btn btn-outline-success" type="submit">
-          Search
-        </button>
-      </form>
     </div>
   </div>
 </nav>
